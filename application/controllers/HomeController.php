@@ -12,4 +12,14 @@ class HomeController extends CI_Controller {
 		$this->load->view('home/landing');
 		$this->load->view('includes/footer');
 	}
+
+	function login() {
+		$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+		header('Content-Type: application/json');
+
+		return $this->output
+    		->set_status_header('401')
+    		->set_content_type('application/json')
+    		->set_output(json_encode( $arr ));
+	}
 }
