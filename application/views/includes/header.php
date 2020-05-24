@@ -6,7 +6,8 @@
 	<title>Tienda de Videojuegos</title>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bt4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dt/datatablesboo.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dt/datatables.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/dcc.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dt/datatables.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/icomoon.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/dcc.css">
 </head>
 <body>

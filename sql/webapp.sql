@@ -2,17 +2,13 @@ DROP DATABASE IF EXISTS webapp;
 CREATE DATABASE webapp;
 USE webapp;
 
-CREATE TABLE materias(
-    idmaterias INT NOT NULL AUTO_INCREMENT
-     , clavemateria VARCHAR(3) NOT NULL
-     , nombremateria VARCHAR(64) NOT NULL
-     , estatusmateria VARCHAR(1) NOT NULL
-     , PRIMARY KEY (idmaterias)
-) ENGINE=INNODB;
-
-INSERT INTO materias (idmaterias, clavemateria, nombremateria, estatusmateria) VALUES
-(1, '9JJ', 'Programacion Wev', '1'),
-(3, '9gg', 'web ', '2');
+CREATE TABLE users(
+	id INT NOT NULL AUTO_INCREMENT
+	, username VARCHAR(30) NOT NULL
+	, email VARCHAR(50) NOT NULL
+	, password VARCHAR(128) NOT NULL
+	, PRIMARY KEY (id)
+);
 
 CREATE TABLE videojuegos(
 	id INT NOT NULL AUTO_INCREMENT
