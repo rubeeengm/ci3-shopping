@@ -5,6 +5,8 @@ defined('BASEPATH') OR exit('accesos directos no estan permitidos');
 class HomeController extends CI_Controller {
 	function __construct() {
 		parent::__construct();
+		$this->load->model('UserModel');
+		$this->load->helper('url');
 	}
 
 	function index() {
@@ -14,12 +16,16 @@ class HomeController extends CI_Controller {
 	}
 
 	function login() {
-		$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
-		header('Content-Type: application/json');
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
 
-		return $this->output
-    		->set_status_header('401')
-    		->set_content_type('application/json')
-    		->set_output(json_encode( $arr ));
+		$user =  $this->UserModel->login($email, $password);
+
+		if ($user == null) {
+			return $this->output->set_status_header('500')
+				->set_output("Usuario o constraseña incorrecta");
+		} else {
+
+		}
 	}
 }

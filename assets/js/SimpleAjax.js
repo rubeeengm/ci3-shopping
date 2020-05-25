@@ -1,7 +1,3 @@
-/**
- * 
- * @author ivelazquex
- */
 var SimpleAjax = (function() {
     function obtenerConfiguracionInicial() {
         return {
@@ -10,6 +6,7 @@ var SimpleAjax = (function() {
             , method : "POST" // POST, GET, PUT, DELETE
             , statusCode : {
                 400: function() {
+                	console.log("hola");
                     var respuesta = arguments[0].responseText;
                     Modal.alert.error(
                         "petición incorrecta"
@@ -60,7 +57,7 @@ var SimpleAjax = (function() {
                 }
                 , 500: function() {
                     Modal.alert.error(
-                        "error interno del servidor"
+                        "Atención"
                         , arguments[0].responseText
                     );
                 }
