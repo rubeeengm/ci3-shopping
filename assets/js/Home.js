@@ -8,6 +8,8 @@ var Home = (function() {
 			Home.login({
 				email: formulario.find('input[id="email"]').val()
 				, password: formulario.find('input[id="password"]').val()
+			}).then(function () {
+				window.location = arguments[0];
 			});
 		});
 	}
@@ -20,6 +22,11 @@ var Home = (function() {
 			return SimpleAjax.consumir({
 				url:urlControlador + "HomeController/login"
 				, data: datos
+			});
+		}
+		, signout: function() {
+			return SimpleAjax.consumir({
+				url:urlControlador + "HomeController/signout"
 			});
 		}
 	}
