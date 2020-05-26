@@ -1,12 +1,8 @@
 <header class="app-header">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">DMStore</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a class="navbar-brand" href="<?php echo base_url(); ?>">DMStore</a>
+        
+        <div class="collapse navbar-collapse" id="">
             <ul class="navbar-nav mr-auto">
 
             </ul>
@@ -30,7 +26,7 @@
                             <form>
                                 <div class="form-group">
                                     <label for="email" class="col-form-label">Email:</label>
-                                    <input type="text" class="form-control" id="email" required maxlength="30">
+                                    <input type="email" class="form-control" id="email" required maxlength="30">
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="col-form-label">Contraseña:</label>

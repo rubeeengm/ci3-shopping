@@ -47,6 +47,6 @@ class HomeController extends CI_Controller {
 		]);
 
 		return $this->output->set_status_header('200')
-			->set_output("index.php");
+			->set_output("");
 	}
 }

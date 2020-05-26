@@ -32,3 +32,4 @@ INSERT INTO videojuegos (nombre, estado, precio) VALUES
 
 
 SELECT * FROM users WHERE email = "admin@example.com" AND PASSWORD = MD5('123456');
+
