@@ -37,4 +37,20 @@ class VideogameController extends CI_Controller {
 		return $this->output->set_status_header('200')
 			->set_output("");
 	}
+
+	function disable() {
+		$id = $this->input->get('id');
+		
+		$this->VideogameModel->disable($id);
+
+		redirect("videogames",'location');
+	}
+
+	function enable() {
+		$id = $this->input->get('id');
+		
+		$this->VideogameModel->enable($id);
+
+		redirect("videogames",'location');
+	}
 }

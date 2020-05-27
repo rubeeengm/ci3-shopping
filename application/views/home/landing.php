@@ -23,15 +23,19 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form id="loginForm">
                                 <div class="form-group">
                                     <label for="email" class="col-form-label">Email:</label>
-                                    <input type="email" class="form-control" id="email" required maxlength="30">
+                                    <input type="email" class="form-control" id="email" name="email" required maxlength="30">
+                                    <span for="email" class="text-danger"></span>
                                 </div>
+
                                 <div class="form-group">
                                     <label for="password" class="col-form-label">Contraseña:</label>
-                                    <input type="password" class="form-control" id="password" required maxlength="15">
+                                    <input type="password" class="form-control" id="password" name="password" required maxlength="15">
+                                    <span for="password" class="text-danger"></span>
                                 </div>
+
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 								<button id="btnLogin" type="button" class="btn btn-primary">Login</button>
                             </form>

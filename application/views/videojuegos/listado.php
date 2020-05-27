@@ -45,20 +45,25 @@
                     <tr>
                         <th>Clave</th>
                         <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Estado</th>
+                        <th style="text-align:right">Precio</th>
+                        <th style="text-align:right">Estado</th>
+                        <th style="text-align:center">Acción</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
 						foreach ($data as $row) {
-							$estado = $row->estado === '1' ? "Disponible" : "No disponible";
+                            $estado = $row->estado === '1' ? "Disponible" : "No disponible";
+                            $accion = $row->estado === '1' 
+                            ? '<a class="btn btn-danger" href="'. base_url(). 'index.php/VideogameController/disable?id='.$row->id.'" type="button">Desactivar</a>'
+                            : '<a class="btn btn-primary" href="'. base_url(). 'index.php/VideogameController/enable?id='.$row->id.'" type="button">Activar</a>';
 
 							echo "<tr>";
 							echo "<td>" . str_pad($row->id, 4, "0", STR_PAD_LEFT) . "</td>";
 							echo "<td>" . $row->nombre . "</td>";
-							echo "<td>" . $row->precio . "</td>";
-							echo "<td>" . $estado . "</td>";
+                            echo '<td align="right">$' .number_format($row->precio, 2, '.', ',') . "</td>";
+                            echo '<td align="right">' . $estado . "</td>";
+                            echo '<td align="center">' . $accion . "</td>";
 							echo "</tr>";
 						}
 					?>

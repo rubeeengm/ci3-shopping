@@ -17,4 +17,22 @@ class VideogameModel extends CI_Model {
 		
 		$this->db->insert('videojuegos', $data);
 	}
+
+	function enable($id) {
+		$data = array (
+            'estado' => '1'
+		);
+		
+        $this->db->where('id', $id);
+        $this->db->update('videojuegos', $data);
+	}
+
+	function disable($id) {
+		$data = array (
+            'estado' => '0'
+		);
+		
+        $this->db->where('id', $id);
+        $this->db->update('videojuegos', $data);
+	}
 }
