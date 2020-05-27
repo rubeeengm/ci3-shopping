@@ -22,14 +22,16 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form id="videogameForm">
                                 <div class="form-group">
                                     <label for="nombre" class="col-form-label">Nombre:</label>
-                                    <input type="nombre" class="form-control" id="nombre" required maxlength="50">
+                                    <input type="nombre" class="form-control" id="nombre" name="nombre" required maxlength="50">
+                                    <span for="nombre" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="precio" class="col-form-label">Precio:</label>
-                                    <input type="precio" class="form-control" id="precio" required maxlength="9">
+                                    <input type="precio" class="form-control" id="precio" name="precio" required maxlength="9">
+                                    <span for="precio" class="text-danger"></span>
                                 </div>
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 								<button id="btnAgregar" type="button" class="btn btn-primary">Agregar</button>
@@ -58,7 +60,7 @@
                             ? '<a class="btn btn-danger" href="'. base_url(). 'index.php/VideogameController/disable?id='.$row->id.'" type="button">Desactivar</a>'
                             : '<a class="btn btn-primary" href="'. base_url(). 'index.php/VideogameController/enable?id='.$row->id.'" type="button">Activar</a>';
 
-							echo "<tr>";
+							echo '<tr data-id="'.$row->id.'">';
 							echo "<td>" . str_pad($row->id, 4, "0", STR_PAD_LEFT) . "</td>";
 							echo "<td>" . $row->nombre . "</td>";
                             echo '<td align="right">$' .number_format($row->precio, 2, '.', ',') . "</td>";
@@ -69,33 +71,6 @@
 					?>
                 </tbody>
             </table>
-        </div><!-- Modal -->
-            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="email" class="col-form-label">Email:</label>
-                                    <input type="text" class="form-control" id="email" required maxlength="30">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="col-form-label">Contraseña:</label>
-                                    <input type="password" class="form-control" id="password" required maxlength="15">
-                                </div>
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-								<button id="btnLogin" type="button" class="btn btn-primary">Login</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
     </div>
 </div>

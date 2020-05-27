@@ -27,7 +27,7 @@ var Home = (function() {
 
         $.validator.addMethod("espaciosEnBlanco", function(value, element) {
             return this.optional(element) || /^\S+$/i.test(value);
-        }, "No ingrese espacios en blanco");
+        }, "Requerido");
 
         formulario.validate({
             rules: {
@@ -45,12 +45,12 @@ var Home = (function() {
             },
             messages: {
                 email: {
-                    required: "El email es requerido",
+                    required: "Requerido",
                     maxlength: "El email debe tener máximo 30 caracteres",
                     email: "Formato de correo inválido"
                 },
                 password: {
-                    required: "La contraseña es requerida",
+                    required: "Requerido",
                     maxlength: "La contraseña debe tener como máximo 15 caracteres"
                 }
             },
